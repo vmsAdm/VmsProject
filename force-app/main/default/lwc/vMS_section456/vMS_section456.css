@@ -1,0 +1,50 @@
+.vms_border_color{
+    border-color: rgb(5, 107, 107);
+}
+.vms_black_button{
+  	font-size: large;
+	font-weight: 600;
+    padding: 13px;
+    margin: 10px;
+    width: 230px;
+    background-color: #000000;
+    border-color: #000000;
+	border-radius: 10px;
+	letter-spacing: 2px;
+}
+.vms_font_color{
+    color: white;
+}
+
+.vms_cyan_button{
+	font-size: large;
+	font-weight: 600;
+    padding: 13px;
+    margin: 10px;
+    width: 230px;
+    background-color: rgb(5, 107, 107);
+    border-color: rgb(5, 107, 107);
+	border-radius: 10px;
+	letter-spacing: 2px;
+}
+.vms_heading{
+    font-size: 38px;
+}
+.bgcolor {
+    --sds-c-card-color-background: rgb(5, 107, 107);
+}
+
+.Background{
+	--sds-c-card-color-background: #000000;
+    color: rgb(5, 107, 107);
+}
+.vms_indiv{
+    background-color: white;
+	color: black;
+}
+.vms_font_color{
+    color: white;
+}
+.div_size{
+    width: 50%;
+}

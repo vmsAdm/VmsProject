@@ -1,0 +1,10 @@
+.image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px; /* Adjust the height as needed */
+  }
+
+  .bgcolor {
+    --sds-c-card-color-background: rgb(5, 107, 107);
+}

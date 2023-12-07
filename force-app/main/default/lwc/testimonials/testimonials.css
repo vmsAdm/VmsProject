@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.grid {
+    flex: 1;
+    margin: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

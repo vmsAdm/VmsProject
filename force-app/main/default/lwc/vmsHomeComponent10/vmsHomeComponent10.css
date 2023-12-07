@@ -1,0 +1,31 @@
+.my-lwc-component{
+    height:500px
+}
+.custom_input{
+    width: 100px; 
+    height: 100px;
+}
+.bg_Color
+{
+ background-color: rgb(5, 107, 107);
+}
+.textcolor{
+    text-decoration-color: white;
+}
+.mycomponent{
+    margin-top: 30px;
+}
+.messageInput{
+    font-size: 30px;
+    margin-top: -23px;
+    width: 500px;
+    border-radius: 10px;
+}
+.Emailinput{
+    width: 500px;
+    border-radius: 10px;
+}
+.Nameinput{
+     width: 500px;
+    border-radius: 10px;
+}

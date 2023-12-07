@@ -1,0 +1,324 @@
+.HeadText{
+	font-size: 40px;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+
+
+.Logosec1{
+	padding-left: 10%;
+	font-size: 20px;
+}
+
+.buttonSize {
+    font-size: 16px;
+	width: 100%;
+    border: 0;
+}
+
+.headStyle{
+	font-size:23px;
+	font-weight:bold;
+}
+.bgcolor {
+    background-color: rgb(5, 107, 107);
+    color:#000000;
+}
+
+.Background{
+	background-color: #000000;
+    color: rgb(5, 107, 107);
+}
+
+.resizeText{
+		font-size:13px;
+}
+
+.vms_black_button{
+  	font-size: large;
+	font-weight: 600;
+    padding: 13px;
+    margin: 10px;
+    width: 230px;
+    background-color: #000000;
+    border-color: #000000;
+	border-radius: 10px;
+	letter-spacing: 2px;
+}
+
+.vms_cyan_button{
+	font-size: large;
+	font-weight: 600;
+    padding: 13px;
+    margin: 10px;
+    width: 230px;
+    background-color: rgb(5, 107, 107);
+    border-color: rgb(5, 107, 107);
+	border-radius: 10px;
+	letter-spacing: 2px;
+}
+
+.vms_heading{
+    font-size: 38px;
+}
+
+.touchStyle{
+	width: 20%;
+	height: 20%;
+	padding-bottom: 10px;
+}
+
+/* 4, 5,6 Sections CSS Start Here Akshit/Ruchita  */
+
+.vms_border_color{
+    border-color: rgb(5, 107, 107);
+}
+.vms_black_button{
+  	font-size: large;
+	font-weight: 600;
+    padding: 13px;
+    margin: 10px;
+    width: 230px;
+    background-color: #000000;
+    border-color: #000000;
+	border-radius: 10px;
+	letter-spacing: 2px;
+}
+
+.vms_cyan_button{
+	font-size: large;
+	font-weight: 600;
+    padding: 13px;
+    margin: 10px;
+    width: 230px;
+    background-color: rgb(5, 107, 107);
+    border-color: rgb(5, 107, 107);
+	border-radius: 10px;
+	letter-spacing: 2px;
+}
+.vms_heading{
+    font-size: 38px;
+}
+.bgcolor {
+    --sds-c-card-color-background: rgb(5, 107, 107);
+}
+
+.Background{
+	--sds-c-card-color-background: #000000;
+    color: rgb(5, 107, 107);
+}
+.vms_font_color{
+	color: white;
+}
+.vms_indiv{
+	background-color: white;
+	color: black;
+}
+.vms_container{
+    padding: 75px;
+}
+/* 4, 5,6 Sections CSS End Here Akshit/Ruchita  */
+/*8 Nitish */
+
+.image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px; /* Adjust the height as needed */
+  }
+
+  .rounded-image {
+    width: 100%;
+    max-width: 700px; /* Adjust the maximum width as needed */
+    height: auto;
+    border-radius: 50%;
+  }
+
+  .Background{
+	background-color: #000000;
+    color: rgb(5, 107, 107);
+}
+.bgcolor {
+    background-color: rgb(5, 107, 107);
+	color: #000000;
+}
+.custom-button {
+    background-color: #0070d2; /* Use your desired button color */
+    color: white;
+    padding: 12px 24px; /* Adjust padding for size */
+    border: none;
+    border-radius: 4px; /* Adjust for rounded corners */
+    font-size: 24px; /* Adjust font size for button text */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+  .arrow {
+    margin-left: 8px; /* Adjust the spacing between text and arrow */
+  }
+
+  .extendsTextSize {
+    font-size: 80px;
+}
+
+/* Abhash Css 10th component and footer css start from here */
+
+.footer_class{
+   margin-top: 0px;  
+   color: rgb(5, 107, 107);
+}
+.slds-p-top_xx-large{
+    padding-top: 90px;
+    text-align: center;
+}
+.footer_class{
+    background-color: black;
+    margin-top: -5px;
+}
+.address_logoo{
+    height:39px; 
+    margin-top:-13px;
+    text-align: center;
+}
+.Email_logo{
+    height:40px; 
+    margin-top:-11px;
+}
+.Call_logo{
+    height:41px; 
+    margin-top:-12px;
+}
+.get_in_touch{
+    font-size:50px;
+    font-weight:bold;
+}
+.heywe{
+    color:white;
+    font-size:30px;
+}
+.betweenyear{
+    color:white;
+    font-size:16px
+}
+.faceoobklogo{
+    height:30px;
+    background-color:black; 
+}
+ .Instagramlogo{
+     height:30px;
+ }   
+.buttonclass{
+    width:500px;
+    background-color:black;
+}
+.infofeat{
+    margin-top:20px;
+    border-radius: 25px;
+    height:80px; 
+    margin-left: 35px;
+    color:black;
+}
+.nasscomlogo{
+     height:70px;
+     margin-left:30px;
+}
+.ouraddress{ 
+    font-size:20px;
+    font-weight:bold;
+    color: #056b6b;
+}
+.addressdetails{
+    font-size:13px;    
+    color:#056b6b;
+}
+.Emailaddress{
+    font-size:15px;
+    color: #056b6b;
+}
+.Ourmail{
+    font-size:20px;
+    font-weight:bold;
+    color:#056b6b;
+}
+.Ournumber{
+   font-size:15px;
+   color:#056b6b; 
+}
+.OurPhone{
+    font-size:20px;
+    font-weight:bold;
+    color:#056b6b;
+}
+.copy_right{
+    text-align: center;
+    padding-top:50px;
+    padding-bottom:40px;
+    font-size:18px;
+    font-weight:bold; 
+    color:#056b6b;
+}
+
+
+
+
+/*asad*/
+
+.testimonials
+{
+padding-top: 20px;
+padding-bottom: 2px;
+color:  rgb(5, 107, 107);
+}
+.paragraph{
+padding-top: 10px;
+padding-right: 30px;
+padding-bottom: 2px;
+padding-left: 30px;
+color:  rgb(5, 107, 107);
+
+}
+.imgstyle{
+    max-width: 100% !important;
+    padding-left: 242px !important;
+    height: 68px !important;
+
+}
+.card1{
+    color:  rgb(5, 107, 107);
+    background-color:black;
+}
+.card2{
+     color:  rgb(5, 107, 107);
+    background-color:black;
+}
+/* 10 section */
+    .Testimonial{
+    background-color:#000000; 
+    align-items: center; 
+    }
+.messageInput{
+    font-size: 30px;
+    margin-top: -20px;
+    width: 500px;
+    border-radius: 10px;
+}
+.Emailinput{
+    width: 500px;
+    border-radius: 10px;
+}
+.Nameinput{
+     width: 500px;
+     border-radius: 10px;
+}
+.my-lwc-component{
+    height:600px;
+    background-color: rgb(5, 107, 107);
+	color:#000000;
+    padding-bottom: 35px;
+}
+
+.custom_input{
+    width: 100px; 
+    height: 100px;
+}

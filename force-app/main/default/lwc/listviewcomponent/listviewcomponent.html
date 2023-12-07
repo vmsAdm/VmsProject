@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Client Records" icon-name="standard:contact_list">
+        <lightning-layout>
+            <lightning-layout-item padding="around-small">
+                <lightning-button label="update" slot="actions"></lightning-button>
+                    <lightning-datatable 
+                        key-field="Id" 
+                        columns={columns} 
+                        data={data}
+                        onrowaction={handleRowAction}
+                        hide-checkbox-column="false"
+                        show-row-number-column="true">
+                    </lightning-datatable>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

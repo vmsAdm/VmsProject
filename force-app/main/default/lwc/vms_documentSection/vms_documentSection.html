@@ -1,0 +1,68 @@
+<template>
+    <!-- sldsValidatorIgnore -->
+    <lightning-card>
+        <div if:true={isLoaded} class="slds-is-relative">
+            <lightning-spinner alternative-text="Loading..." variant="brand" size="large">
+            </lightning-spinner>
+        </div>
+
+        <div slot="actions">
+            <lightning-button label="New Document" title="Click to perform an action" onclick={handleAddDocument}
+                variant="brand"></lightning-button>
+        </div>
+        <lightning-layout if:true={isTableShow}>
+            <lightning-layout-item flexibility="auto" padding="around-small" size="12">
+                <lightning-datatable key-field="Id" columns={columns} data={dataSet} onrowaction={onrowactionHandler}
+                    hide-checkbox-column="false" show-row-number-column="true">
+                </lightning-datatable>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+
+    <div if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+            class="slds-modal slds-fade-in-open slds-modal_small slds-p-bottom_large">
+            <div class="slds-modal__container">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                    onclick={handleCancel}>
+                    <span class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                        <!-- <use xlink:href="utility:close"></use> -->
+                        <lightning-icon icon-name="utility:close" alternative-text="close"
+                            title="close"></lightning-icon>
+                    </span>
+                    <span class="slds-assistive-text">Cancel and close</span>
+                </button>
+                <div class="slds-modal__header">
+                    <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Document Upload</h1>
+                </div>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning-combobox class="validate" field-name="Document_Type__c" label="Document Type"
+                        value={updateFileRecord.Document_Type__c} options={documnetOptions} onchange={handleChange}
+                        data-id={updateFileRecord.Id} required="true">
+                    </lightning-combobox>
+
+                    <lightning-textarea field-name="Description" value={updateFileRecord.Description}
+                        label="Description" max-length="1000" onchange={handleChange}>
+                    </lightning-textarea>
+
+                    <div class="slds-grid">
+                        <lightning-file-upload class="uploadValidate" data-id={updateFileRecord.Id} name="File"
+                            label="Upload Document" onuploadfinished={uploadfinished} required="true">
+                        </lightning-file-upload>
+                        <span class="slds-text-heading_small slds-var-p-left_small slds-var-p-top_x-large"
+                            style="opacity:0.7">{FileName}</span>
+                    </div>
+                </div>
+                <div class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" aria-label="Cancel and close"
+                        onclick={handleCancel}>Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={handleSave}
+                        lwc:if={updateFileRecord.oldRecordId}>Update</button>
+                    <button class="slds-button slds-button_brand" onclick={handleSave} lwc:else>Save</button>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </div>
+
+</template>

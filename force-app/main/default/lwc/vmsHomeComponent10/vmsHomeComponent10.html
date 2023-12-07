@@ -1,0 +1,61 @@
+<template >
+        <div class="my-lwc-component bg_Color">
+            <div class="slds-grid slds-gutters slds-p-top_large">
+
+            <div class="slds-col slds-size_1-of-2 ">
+             <div class = "slds-p-around_large slds-text-align_left slds-m-left_medium">         
+           
+            <span><h1 class="slds-text-align_left slds-m-left_small slds-text-heading_x-large"
+             style="font-size:50px;font-weight:bold">
+               <center>Get In Touch!!!</center></h1>                  
+                  
+             <p style="color:white;font-size:35px;" class="slds-text-align_left slds-m-left_medium slds-m-bottom_medium slds-text-align_center">
+                Hey! we are looking forward to <br>start project with you</p>
+                     
+                <p style="color:white;" class="slds-text-align_left slds-m-left_medium slds-m-bottom_medium">Between year-end pushes to fill 
+                the remaining headcount and setting stretch goals for the upcoming year, theres never a season when
+                recruiters are not striving to meet a time-sensitive goal.
+                 </p>
+            
+           <ul class="slds-list_horizontal slds-has-dividers_right ">
+             <li class="slds-item"><img src={FaceBookBlackLogo}  alt="Facebook"  style="height:30px;background-color:black; "></li>
+             <li class="slds-item"><img src={instagramBlackLogo} alt="Instagram" style="height:30px"></li>
+           </ul>
+           
+            </span>
+             </div>
+          </div>
+          
+          
+           <div class="slds-col slds-size_1-of-2 ">
+               <div class = "slds-p-around_large">
+               <span>
+                  <div class="slds-form">
+                    <div class="slds-form-element">
+                        <lightning-textarea  id="custom_input" class="Nameinput" placeholder="Enter Your Name" value={name} onchange={handleNameChange}></lightning-textarea>
+                    </div>
+                    <div class="slds-form-element">
+                        
+                        <lightning-textarea type="email" class="Emailinput" id="emailInput" placeholder="Enter a valid email address" value={email}
+                         onchange={handleEmailChange}></lightning-textarea>
+                    </div>
+                    <div class="slds-form-element">
+                        
+                        <lightning-textarea id="messageInput" class="messageInput" placeholder="Enter Your Message" onchange={handleMessageChange}></lightning-textarea>
+                    </div>
+                    <br>
+                    <div>
+                        <input  type="checkbox" id="acceptTerms">
+                        <label for="acceptTerms">I accept the terms & conditions</label>
+                    </div>
+                    <div>
+                        <button style="width:500px;" class="slds-button black-button slds-button_stretch slds-button_brand slds-m-top_small" 
+                          onclick={handleSubmit}>Submit</button>
+                    </div>
+               </div>
+               </span>
+               </div>
+           </div>  
+        </div>
+    </div>
+</template>

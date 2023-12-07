@@ -1,0 +1,111 @@
+<template>
+    <lightning-card title="Client Record Details">
+        <template lwc:if={clientRecord} for:each={clientRecord} for:item="contactInfo">
+            <div key={contactInfo.Id}>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-combobox field-name="Salutation" label="Salutation" value={contactInfo.Salutation}
+                            options={allPicklistValues.Salutation.values} onchange={handleChange}
+                            disabled={isDisabled}></lightning-combobox>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input field-name="FirstName" label="First Name" class="start-date-input" type="text"
+                            value={contactInfo.FirstName} onchange={handleChange}
+                            disabled={isDisabled}></lightning-input>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input field-name="LastName" label="Last Name" class="start-date-input" type="text"
+                            value={contactInfo.LastName} onchange={handleChange} disabled={isDisabled}>
+                        </lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-combobox field-name="AccountId" label="Select an Account"
+                            value={contactInfo.AccountId} options={accountOptions} onchange={handleChange}
+                            disabled={isDisabled}></lightning-combobox>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input field-name="Birthdate" label="Birthdate" class="start-date-input" type="date"
+                            value={contactInfo.Birthdate} onchange={handleChange}
+                            disabled={isDisabled}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-combobox field-name="State__c" label="State" value={contactInfo.State__c}
+                            placeholder="Select State" options={allPicklistValues.State__c.values}
+                            onchange={handleChange} disabled={isDisabled}></lightning-combobox>
+                    </div>
+                </div>
+                <div if:true={isLoaded} class="slds-is-relative">
+                    <lightning-spinner alternative-text="Loading..." variant="brand" size="large">
+                    </lightning-spinner>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input field-name="MobilePhone" label="Mobile" class="start-date-input" type="text"
+                            value={contactInfo.MobilePhone} onchange={handleChange}
+                            disabled={isDisabled}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-combobox field-name="Domain__c" label="Domain" value={contactInfo.Domain__c}
+                            placeholder="Select Domain" options={allPicklistValues.Domain__c.values}
+                            onchange={handleChange} disabled={isDisabled}></lightning-combobox>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input field-name="Phone" label="Phone" class="start-date-input" type="text"
+                            value={contactInfo.Phone} onchange={handleChange} disabled={isDisabled}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-combobox field-name="Domain_Sub_Category__c" label="Sub Domain"
+                            value={contactInfo.Domain_Sub_Category__c} placeholder="Select Sub-Domain"
+                            options={allPicklistValues.Domain_Sub_Category__c.values} onchange={handleChange}
+                            disabled={isDisabled}></lightning-combobox>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-combobox field-name="City__c" label="City" value={contactInfo.City__c}
+                            placeholder="Select City" options={allPicklistValues.City__c.values} onchange={handleChange}
+                            disabled={isDisabled}></lightning-combobox>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-combobox field-name="Area__c" label="Area" value={contactInfo.Area__c}
+                            placeholder="Select Area" options={allPicklistValues.Area__c.values} onchange={handleChange}
+                            disabled={isDisabled}></lightning-combobox>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input field-name="OtherAddress" label="Other Address" class="start-date-input"
+                            type="text" value={contactInfo.otherAdress} onchange={handleChange}
+                            disabled={isDisabled}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input field-name="MailingAddress" label="Mailing Address" class="start-date-input"
+                            type="text" value={contactInfo.mailingAddress} onchange={handleChange}
+                            disabled={isDisabled}></lightning-input>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+
+        <div class="slds-grid slds-wrap slds-grid_align-center slds-p-top_xx-large" if:false={isEdit}>
+            <div class="slds-float_right">
+                <lightning-button label="Edit" onclick={handleEdit} variant="brand"></lightning-button>
+            </div>
+        </div>
+        <div class="slds-grid slds-wrap slds-grid_align-center slds-p-top_xx-large" if:true={isEdit}>
+            <div class="slds-m-right_small">
+                <lightning-button label="Cancel" onclick={handleCancel}></lightning-button>
+            </div>
+            <div>
+                <lightning-button label="Save" onclick={handleSave} variant="brand"></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

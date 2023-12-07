@@ -1,0 +1,78 @@
+<template>
+ <lightning-card title="Client Record Details">
+     <div class="slds-grid slds-gutters">
+      <div class="slds-col slds-size_1-of-2">
+         <lightning-input label="Client Name" class="start-date-input" type="text" value={name} onchange={handleStartDateChange} disabled={isDisabled}></lightning-input>
+     </div>
+         <div class="slds-col slds-size_1-of-2">
+            <lightning-input label="First Name" class="start-date-input" type="text" value={firstName} onchange={handleStartDateChange} disabled={isDisabled}></lightning-input>
+        </div>
+     </div>
+         <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-2">
+               <lightning-input label="Last Name" class="start-date-input" type="text" value={lastName}  onchange={handleStartDateChange} disabled={isDisabled}> </lightning-input>
+           </div>
+           <div class="slds-col slds-size_1-of-2">
+            <lightning-combobox label="Select an Account" value={accountName} options={accountOptions}  onchange={handleAccountSelection}  disabled={isDisabled}></lightning-combobox>
+           </div>
+     </div>
+         <div class="slds-grid slds-gutters">
+         <div class="slds-col slds-size_1-of-2">
+            <lightning-input label="Birthdate"  class="start-date-input" type="date"  value={birthDate}  onchange={handleBirthDateDateChange} disabled={isDisabled}></lightning-input>
+        </div>
+         <div class="slds-col slds-size_1-of-2">
+         <lightning-combobox name="progress" label="State" value={value}  placeholder="Select State" options={state} onchange={handleStateChange} disabled={isDisabled}></lightning-combobox>
+        </div>
+     </div>
+        <div class="slds-grid slds-gutters">
+         <div class="slds-col slds-size_1-of-2">
+            <lightning-input type="file" 
+            accept=".xlsx, .xls, .csv, .png, .doc, .docx, .pdf"
+            label="Upload Documents" onchange={openfileUpload} disabled={isDisabled}></lightning-input>
+        <template if:true={fileData}>
+            <p>{fileData.filename}</p>
+        </template>
+          </div> 
+         <div class="slds-col slds-size_1-of-2">
+         <lightning-combobox name="Document" label="Document" value={document}  placeholder="Select Document" options={documnetOptions} onchange={handleChange} disabled={isDisabled} ></lightning-combobox>
+        </div>
+     </div>
+      <div class="slds-grid slds-gutters">
+         <div class="slds-col slds-size_1-of-2">
+            <lightning-input label="Mobile"  class="start-date-input" type="text"  value={startDate}  onchange={handleBirthDateDateChange} disabled={isDisabled}></lightning-input>
+        </div>
+         <div class="slds-col slds-size_1-of-2">
+         <lightning-combobox name="domain" label="Domain" value={domain}  placeholder="Select Domain" options={domainOptions} onchange={handleChange} disabled={isDisabled}></lightning-combobox>
+        </div>
+     </div>
+     <div class="slds-grid slds-gutters">
+      <div class="slds-col slds-size_1-of-2">
+         <lightning-input label="Other Phone"  class="start-date-input" type="text"  value={otherPhone}  onchange={handleBirthDateDateChange} disabled={isDisabled}></lightning-input>
+     </div>
+      <div class="slds-col slds-size_1-of-2">
+         <lightning-combobox name="subdomain" label="Sub Domain" value={subDomain}  placeholder="Select Sub-Domain" options={subDomainOptions} onchange={handleChange} disabled={isDisabled} ></lightning-combobox>
+     </div>
+  </div>
+  <div class="slds-grid slds-gutters">
+   <div class="slds-col slds-size_1-of-2">
+      <lightning-combobox name="city" label="City" value={city}  placeholder="Select City" options={citiesOptions} onchange={handleChange} disabled={isDisabled}></lightning-combobox>
+  </div>
+  <div class="slds-col slds-size_1-of-2">
+   <lightning-combobox name="area" label="Area" value={area}  placeholder="Select Area" options={areaOptions} onchange={handleChange} disabled={isDisabled}></lightning-combobox>
+</div>
+</div>
+<div class="slds-grid slds-gutters">
+   <div class="slds-col slds-size_1-of-2">
+      <lightning-input label="Other Address"  class="start-date-input" type="text"  value={otherAdress}  onchange={handleBirthDateDateChange} disabled={isDisabled}></lightning-input>
+  </div>
+   <div class="slds-col slds-size_1-of-2">
+      <lightning-input label="Mailing Address"  class="start-date-input" type="text"  value={mailingAddress}  onchange={handleBirthDateDateChange} disabled={isDisabled}></lightning-input>
+  </div>
+  </div>
+<div class="slds-grid slds-wrap slds-grid_align-center slds-p-top_xx-large">
+   <div class="slds-float_right">
+      <lightning-button label="Edit" onclick={disabledData} variant="brand" ></lightning-button>
+   </div>
+ </div>    
+ </lightning-card>
+</template>

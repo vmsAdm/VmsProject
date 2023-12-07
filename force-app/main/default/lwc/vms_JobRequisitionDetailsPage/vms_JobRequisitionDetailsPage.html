@@ -1,0 +1,87 @@
+<template>
+<lightning-card title="Job Requisition Record Detail">
+    <template lwc:if={jobRecord} for:each={jobRecord} for:item="jobInfo">
+        <div key={jobInfo.Id}>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-input label="Job No" field-name="Name" type="text" value={jobInfo.Name} onchange={handleChange}
+                disabled={isDisabled}></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-input label="Job Title" field-name="Job_Title__c" type="text" value={jobInfo.Job_Title__c}
+                onchange={handleChange} disabled={isDisabled}></lightning-input>
+        </div>
+    </div>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-input label="Reports To Name" field-name="Reports_To_Name__c" type="text" value={jobInfo.Reports_To_Name__c}
+                onchange={handleChange} disabled={isDisabled}></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-input label="Reports To Title" field-name="Reports_To_Title__c" type="text" value={jobInfo.Reports_To_Title__c}
+                onchange={handleChange} disabled={isDisabled}></lightning-input>
+        </div>
+    </div>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-2">
+
+        
+                <lightning-combobox name="Job Type" field-name="Job_Contract__c" label="Job Type" value={jobInfo.Job_Contract__c}
+                placeholder="Select Type" options={documnettypeOptions} onchange={handleChange}
+                disabled={isDisabled}></lightning-combobox>
+            
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-combobox name="Domain" field-name="Job_Title__c" label="Domain" value={jobInfo.Domain__c}
+                placeholder="Select Type" options={documnettypeOptions} onchange={handleChange}
+                disabled={isDisabled}></lightning-combobox>
+        </div>
+    </div>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-combobox class="slds-required" field-name="Sub_Domain__c" name="Job Type" label="Sub Domain"
+            value={jobInfo.Sub_Domain__c} placeholder="Select Type" options={documnettypeOptions} onchange={handleChange}
+                disabled={isDisabled}></lightning-combobox>
+        </div>
+
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-combobox class="slds-required" field-name="Experience_Required__c" name="Experience Required"
+                label="Experience Required" value={jobInfo.Experience_Required__c} placeholder="Experience Required"
+                options={referenceOptions} onchange={handleChange} disabled={isDisabled}></lightning-combobox>
+        </div>
+    </div>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-combobox class="slds-required" field-name="Education_Required__c" name="Education Required"
+                label="Education Required" value={jobInfo.Education_Required__c} placeholder="Education Required"
+                options={referenceOptions} onchange={handleChange} disabled={isDisabled}></lightning-combobox>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-input field-name="No_of_Candidate_Required__c" label="No Of Candidate Required" type="Number" value={jobInfo.No_of_Candidate_Required__c}
+                onchange={handleChange} disabled={isDisabled}></lightning-input>
+        </div>
+    </div>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-2">
+            <label class="slds-form-element__label" >General
+                Description</label>
+            <div class="slds-form-element__control" >
+                <textarea field-name="General_Description__c" value={jobInfo.General_Description__c} placeholder="Placeholder text…" class="slds-textarea"></textarea>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    </template>
+    <div class="slds-grid slds-wrap slds-grid_align-center slds-p-top_xx-large">
+        <div class="slds-float_right">
+            <lightning-button label="Edit" onclick={editHandle} variant="brand"></lightning-button>
+
+
+        </div>
+        <div class="slds-p-left_large">
+            <lightning-button label="Save" onclick={HandleSave} variant="brand"></lightning-button>
+        </div>
+    </div>
+</lightning-card>
+</template>

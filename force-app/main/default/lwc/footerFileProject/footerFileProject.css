@@ -1,0 +1,17 @@
+*{
+    margin: auto;
+    padding: auto;
+}
+.footer_class{
+    margin-top: 0px;
+    border-top: 2px solid #bbb;
+     color: rgb(5, 107, 107);
+}
+.slds-p-top_xx-large{
+    padding-top: 90px;
+    text-align: center;
+}
+
+.footer_class{
+    background-color: black;
+}
