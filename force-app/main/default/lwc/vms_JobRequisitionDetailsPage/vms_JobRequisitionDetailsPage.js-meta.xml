@@ -6,13 +6,21 @@
 		<target>lightning__RecordPage</target>
 		<target>lightning__AppPage</target>
 		<target>lightning__HomePage</target>
+		<target>lightning__Tab</target>
+		<target>lightning__RecordAction</target>
 		<target>lightningCommunity__Page</target>
-		  <target>lightningCommunity__Default</target>
+		<target>lightningCommunity__Default</target>
 	</targets>
-     <!-- <targetConfigs>
-        <targetConfig targets="lightningCommunity__Default">
-            <property name="recordId" default="{!recordId}" type="String" 
-                label="Record ID" description="Should not be changed from default value."/>
-        </targetConfig>
-    </targetConfigs> -->
+
+	<targetConfigs>
+		<targetConfig targets="lightning__RecordPage">
+			<objects>
+				<object>Job_Requisition__c</object>
+			</objects>
+		</targetConfig>
+		<targetConfig targets="lightningCommunity__Default">
+			<property name="recordId" default="{!recordId}" type="String"
+				label="Record ID" description="Should not be changed from default value." />
+		</targetConfig>
+	</targetConfigs>
 </LightningComponentBundle>

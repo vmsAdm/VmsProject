@@ -14,5 +14,17 @@ public class VMS_Job_Requisition {
         
         return job;
     }
+   
+    @AuraEnabled(cacheable=true)
+    public static List<Job_Requisition__c> searchJobRequsition() {
+        return [SELECT Id, Name,Job_Title__c FROM Job_Requisition__c];
+    }
+
+    @AuraEnabled
+    public static void saveJobRecord(List<Job_Requisition__c> jobRecords){
+        system.debug('Recordnew--'+jobRecords);
+        Job_Requisition__c jobRecord = jobRecords[0];              
+        update jobRecord;
+    }
 
 }

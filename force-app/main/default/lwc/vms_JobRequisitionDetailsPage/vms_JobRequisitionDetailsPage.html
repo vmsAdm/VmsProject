@@ -1,87 +1,111 @@
 <template>
-<lightning-card title="Job Requisition Record Detail">
-    <template lwc:if={jobRecord} for:each={jobRecord} for:item="jobInfo">
-        <div key={jobInfo.Id}>
-    <div class="slds-grid slds-gutters">
-        <div class="slds-col slds-size_1-of-2">
-            <lightning-input label="Job No" field-name="Name" type="text" value={jobInfo.Name} onchange={handleChange}
-                disabled={isDisabled}></lightning-input>
-        </div>
-        <div class="slds-col slds-size_1-of-2">
-            <lightning-input label="Job Title" field-name="Job_Title__c" type="text" value={jobInfo.Job_Title__c}
-                onchange={handleChange} disabled={isDisabled}></lightning-input>
-        </div>
-    </div>
-    <div class="slds-grid slds-gutters">
-        <div class="slds-col slds-size_1-of-2">
-            <lightning-input label="Reports To Name" field-name="Reports_To_Name__c" type="text" value={jobInfo.Reports_To_Name__c}
-                onchange={handleChange} disabled={isDisabled}></lightning-input>
-        </div>
-        <div class="slds-col slds-size_1-of-2">
-            <lightning-input label="Reports To Title" field-name="Reports_To_Title__c" type="text" value={jobInfo.Reports_To_Title__c}
-                onchange={handleChange} disabled={isDisabled}></lightning-input>
-        </div>
-    </div>
-    <div class="slds-grid slds-gutters">
-        <div class="slds-col slds-size_1-of-2">
+    <lightning-card title="Job Requisition Record Detail">
+        <template lwc:if={jobRecord} for:each={jobRecord} for:item="jobInfo">
+            <div key={jobInfo.Id}>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input label="Job No" field-name="Name" type="text" value={jobInfo.Name}
+                            onchange={handleChange} disabled={isDisabled}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input label="Job Title" field-name="Job_Title__c" type="text"
+                            value={jobInfo.Job_Title__c} onchange={handleChange}
+                            disabled={isDisabled}></lightning-input>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input label="Reports To Name" field-name="Reports_To_Name__c" type="text"
+                            value={jobInfo.Reports_To_Name__c} onchange={handleChange}
+                            disabled={isDisabled}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input label="Reports To Title" field-name="Reports_To_Title__c" type="text"
+                            value={jobInfo.Reports_To_Title__c} onchange={handleChange}
+                            disabled={isDisabled}></lightning-input>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-combobox name="Job Type" field-name="Job_Contract__c" label="Job Type"
+                            value={jobInfo.Job_Contract__c} placeholder="Select Type" options={JobContract}
+                            onchange={handleChange} disabled={isDisabled}></lightning-combobox>
 
-        
-                <lightning-combobox name="Job Type" field-name="Job_Contract__c" label="Job Type" value={jobInfo.Job_Contract__c}
-                placeholder="Select Type" options={documnettypeOptions} onchange={handleChange}
-                disabled={isDisabled}></lightning-combobox>
-            
-        </div>
-        <div class="slds-col slds-size_1-of-2">
-            <lightning-combobox name="Domain" field-name="Job_Title__c" label="Domain" value={jobInfo.Domain__c}
-                placeholder="Select Type" options={documnettypeOptions} onchange={handleChange}
-                disabled={isDisabled}></lightning-combobox>
-        </div>
-    </div>
-    <div class="slds-grid slds-gutters">
-        <div class="slds-col slds-size_1-of-2">
-            <lightning-combobox class="slds-required" field-name="Sub_Domain__c" name="Job Type" label="Sub Domain"
-            value={jobInfo.Sub_Domain__c} placeholder="Select Type" options={documnettypeOptions} onchange={handleChange}
-                disabled={isDisabled}></lightning-combobox>
-        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-combobox name="Domain" field-name="Domain__c" label="Domain"
+                            value={jobInfo.Domain__c} placeholder="Select Type" options={Domainjob}
+                            onchange={handleChange} disabled={isDisabled}></lightning-combobox>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-combobox field-name="Sub_Domain__c" name="Job Type" label="Sub Domain"
+                            value={jobInfo.Sub_Domain__c} placeholder="Select Type" options={subDomainOption}
+                            onchange={handleChange} disabled={isDisabled}></lightning-combobox>
+                    </div>
 
-        <div class="slds-col slds-size_1-of-2">
-            <lightning-combobox class="slds-required" field-name="Experience_Required__c" name="Experience Required"
-                label="Experience Required" value={jobInfo.Experience_Required__c} placeholder="Experience Required"
-                options={referenceOptions} onchange={handleChange} disabled={isDisabled}></lightning-combobox>
-        </div>
-    </div>
-    <div class="slds-grid slds-gutters">
-        <div class="slds-col slds-size_1-of-2">
-            <lightning-combobox class="slds-required" field-name="Education_Required__c" name="Education Required"
-                label="Education Required" value={jobInfo.Education_Required__c} placeholder="Education Required"
-                options={referenceOptions} onchange={handleChange} disabled={isDisabled}></lightning-combobox>
-        </div>
-        <div class="slds-col slds-size_1-of-2">
-            <lightning-input field-name="No_of_Candidate_Required__c" label="No Of Candidate Required" type="Number" value={jobInfo.No_of_Candidate_Required__c}
-                onchange={handleChange} disabled={isDisabled}></lightning-input>
-        </div>
-    </div>
-    <div class="slds-grid slds-gutters">
-        <div class="slds-col slds-size_1-of-2">
-            <label class="slds-form-element__label" >General
-                Description</label>
-            <div class="slds-form-element__control" >
-                <textarea field-name="General_Description__c" value={jobInfo.General_Description__c} placeholder="Placeholder text…" class="slds-textarea"></textarea>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-combobox field-name="Experience_Required__c" name="Experience Required"
+                            label="Experience Required" value={jobInfo.Experience_Required__c}
+                            placeholder="Experience Required" options={JobExperience} onchange={handleChange}
+                            disabled={isDisabled}></lightning-combobox>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-combobox class="slds-required" field-name="Education_Required__c"
+                            name="Education Required" label="Education Required" value={jobInfo.Education_Required__c}
+                            placeholder="Education Required" options={JobEducationRequired} onchange={handleChange}
+                            disabled={isDisabled}></lightning-combobox>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input field-name="No_of_Candidate_Required__c" label="No Of Candidate Required"
+                            type="Number" value={jobInfo.No_of_Candidate_Required__c} onchange={handleChange}
+                            disabled={isDisabled}></lightning-input>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input field-name="Job_Loaction__c" label="Job Loaction" type="text"
+                            value={jobInfo.Job_Loaction__c} onchange={handleChange}
+                            disabled={isDisabled}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input field-name="Job_Posting_Date__c" label="Job Posting Date" type="Date"
+                            value={jobInfo.Job_Posting_Date__c} onchange={handleChange}
+                            disabled={isDisabled}></lightning-input>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+
+                        <label class="slds-form-element__label">General Description</label>
+                        <div class="slds-form-element__control">
+                            <textarea field-name="General_Description__c" placeholder="Placeholder text…"
+                                class="slds-textarea" onchange={handleChange}
+                                disabled={isDisabled}>{jobInfo.General_Description__c}</textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </template>
+        <div class="slds-grid slds-wrap slds-grid_align-center slds-p-top_xx-large" if:false={isEdit}>
+            <div class="slds-float_right">
+                <lightning-button label="Edit" onclick={handleEdit} variant="brand"></lightning-button>
             </div>
         </div>
-
-    </div>
-    </div>
-    </template>
-    <div class="slds-grid slds-wrap slds-grid_align-center slds-p-top_xx-large">
-        <div class="slds-float_right">
-            <lightning-button label="Edit" onclick={editHandle} variant="brand"></lightning-button>
-
-
+        <div class="slds-grid slds-wrap slds-grid_align-center slds-p-top_xx-large" if:true={isEdit}>
+            <div class="slds-m-right_small">
+                <lightning-button label="Cancel" onclick={handleCancel}></lightning-button>
+            </div>
+            <div>
+                <lightning-button label="Save" onclick={handleSave} variant="brand"></lightning-button>
+            </div>
         </div>
-        <div class="slds-p-left_large">
-            <lightning-button label="Save" onclick={HandleSave} variant="brand"></lightning-button>
-        </div>
-    </div>
-</lightning-card>
+    </lightning-card>
 </template>
